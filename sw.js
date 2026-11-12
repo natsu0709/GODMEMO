@@ -1,8 +1,8 @@
 // 神MEMO service worker: lets the app open offline.
 // When you change index.html, bump VERSION so phones pick up the new version.
-const VERSION = 'kamimemo-v2';
-const SHELL = ['./', './index.html', './manifest.json',
-  './icon-192.png', './icon-512.png', './icon-maskable-512.png', './icon-180.png', './icon-32.png'];
+const VERSION = 'kamimemo-v3';
+const SHELL = ['./', './index.html', './manifest.json?v=2',
+  './icon-192.png?v=2', './icon-512.png?v=2', './icon-maskable-512.png?v=2', './icon-180.png?v=2', './icon-32.png?v=2'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
